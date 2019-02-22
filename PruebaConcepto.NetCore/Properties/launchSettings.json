@@ -1,0 +1,35 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/PruebaConcepto.NetCore",
+      "sslPort": 0
+    },
+    "iisExpress": {
+      "applicationUrl": "http://localhost:52729/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Llave_secreta": "zcrtretk546546gdkfgfgksddlsdl34o4o5gjjgdflsfdfl43034fdgkfkg43kdfksdf"
+      }
+    },
+    "PruebaConcepto.NetCore": {
+      "commandName": "IIS",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost/PruebaConcepto.NetCore",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIROMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:52730/"
+    },
+    "newProfile1": {
+      "commandName": "Executable"
+    }
+  }
+}

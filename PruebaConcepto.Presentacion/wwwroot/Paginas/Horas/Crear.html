@@ -1,0 +1,53 @@
+﻿<div class="container">
+
+    <h4><a class="urlRegreso" href="./#/Actividades/Crear"> < Actividades</a> </h4>
+
+    <div class="row" ng-show="!esMasOchoHoras">
+        <form role="form" name="formCrear" ng-submit="crear(hora)">
+            <div class="col-md-7 col-md-offset-2" style="text-align:center">
+
+                <label>Fecha <span style="color: red; font-weight:bold"> *</span></label>
+                <input type="datetime"
+                       class="form-control calendario"
+                       ng-required="true"
+                       ng-model="hora.Fecha" />
+
+                <label>Hora <span style="color: red; font-weight:bold"> *</span></label>
+                <input type="number"
+                       class="form-control"
+                       ng-required="true"
+                       min="1"
+                       max="8"
+                       ng-model="hora.Horas" />
+
+                <br /><button type="submit" class="btn btn-primary">Crear Hora</button><br /><br />
+            </div>
+        </form>
+    </div>
+
+    <p class="bg-danger" ng-show="esMasOchoHoras"
+       style="padding: 15px;">Está actividad tiene 8 horas o mas asignadas</p>
+
+    <div class="row">
+        <div class="col-md-7 col-xs-12">
+            <h3>Lista de horas</h3>
+            <hr />
+            <div class="container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Fecha <small>(dd/mm/aa)</small></th>
+                            <th>Tiempo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in listaHoras">
+                            <td>{{item.Fecha | date:'MM/dd/yyyy' }}</td>
+                            <td>{{item.Horas }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

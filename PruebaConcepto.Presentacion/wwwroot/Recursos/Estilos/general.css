@@ -1,0 +1,23 @@
+﻿body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.header {
+    display: block;
+    background: #337ab7;
+    margin-bottom: 5vh;
+}
+
+.header h3{
+
+    color: white;
+    font-weight: bold;
+}
+
+.header small {
+    color: #F2F3F4;
+    margin-left: 1rem;
+}
+

@@ -1,0 +1,84 @@
+﻿<div class="container">
+    <div class="row">
+        <form role="form" name="formCrear" ng-submit="crear(documentacion)">
+
+            <div class="row">
+                <div class="col-md-7 col-md-offset-2" style="text-align:center">
+
+                    <label>Nombre funcionario <span style="color: red; font-weight:bold"> *</span></label>
+                    <input type="text"
+                           ng-required="true"
+                           class="form-control"
+                           ng-model="documentacion.NombreFuncionario" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-5" style="text-align:center">
+                    <label>Número de comunicación <span style="color: red; font-weight:bold"> *</span></label>
+                    <input type="number"
+                           class="form-control"
+                           ng-required="true"
+                           ng-model="documentacion.NumComunicacion" />
+
+                </div>
+                <div class="col-md-5" style="text-align:center">
+                    <label>Clasificación  <span style="color: red; font-weight:bold"> *</span></label>
+                    <select data-live-search="true"
+                            name="Cliente"
+                            class="select capitalize form-control"
+                            ng-model="documentacion.Clasificacion"
+                            ng-options="option as option.Nombre for option in listaClasificaciones">
+                        <option value="">Seleccione</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-7 col-md-offset-2" style="text-align:center">
+                    <label> Observaciones</label>
+                    <textarea class="form-control"
+                              ng-model="documentacion.Descripcion"
+                              ng-required="true"
+                              placeholder="De una descripción breve del documento">
+                </textarea>
+
+                    <br /><button type="submit" class="btn btn-primary">Crear Documento</button><br /><br />
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-md-7 col-xs-12">
+            <h3>Lista de Documentación</h3>
+            <hr />
+            <div class="container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre funcionario</th>
+                            <th>Número comunicación</th>
+                            <th>Observaciones</th>
+                            <th>Creado <small>(dd/mm/aa)</small></th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in listaDocumentaciones">
+                            <td>{{item.NombreFuncionario }}</td>
+                            <td>{{item.NumComunicacion }}</td>
+                            <td>{{item.Observaciones }}</td>
+                            <td>{{item.Creado }}</td>
+                            <td>
+                                <span style="cursor:pointer"
+                                      ng-click="eliminar(item)"
+                                      class="glyphicon glyphicon-trash"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
